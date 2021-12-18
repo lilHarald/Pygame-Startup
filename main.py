@@ -61,8 +61,8 @@ while run:
     yvalue = down.value - up.value
     xvalue = right.value - left.value
     if xvalue != 0 and yvalue != 0:
-        xvalue = xvalue / 2
-        yvalue = yvalue / 2
+        xvalue = xvalue / 1.414
+        yvalue = yvalue / 1.414
     Player.Move(yvalue, xvalue, delta_time)
 
     render()

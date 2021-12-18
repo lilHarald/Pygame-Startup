@@ -24,8 +24,12 @@ down = WASD("s")
 left = WASD("a")
 right = WASD("d")
 
+def keyboardDetection():
+    up.pressed(), down.pressed(), left.pressed(), right.pressed()
+
+
 class Player:
-    speed = 700
+    speed = 500
     x = 10
     y = 10
     W = 100
@@ -37,15 +41,12 @@ class Player:
         cls.x += x * cls.speed * delta_time
 
 
-def keyboardDetection():
-    up.pressed(), down.pressed(), left.pressed(), right.pressed()
-
-
 def render():
     WIN.fill(BG_COLOR)
     pygame.draw.rect(WIN, (255, 0, 0), (int(Player.x), int(Player.y), Player.W, Player.H))
     pygame.display.update()
 
+    
 ticks_last_frame = 0
 run = True
 while run:
